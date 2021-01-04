@@ -1,0 +1,22 @@
+---
+title: "DDP_Week3_Assignment"
+author: "Weilun Chiu"
+date: "1/3/2021"
+output: ioslides_presentation
+---
+  
+  
+## Boston Data _ Boxplot
+MEDV: median value of owner-occupied homes in \$1000s.  
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(plotly)
+library(MASS)
+library(Hmisc)
+Boston$crim1<-cut2(Boston$crim, g=5)
+plot_ly(x=~Boston$crim1, y=~Boston$medv, type="box", 
+        color=~Boston$crim1) %>% layout(showlegend=FALSE,
+                                        xaxis=list(title="Crime Rate"), yaxis=list(title="MEDV"))
+````
+
+
+## Thanks
